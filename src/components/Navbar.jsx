@@ -32,16 +32,12 @@ export default function CustomNavbar() {
       <Container fluid>
         <Navbar.Brand href="#">Redux Toolkit</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav className="me-auto my-2 my-lg-0">
-            <Nav.Link href="#">Products</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
 
         <Navbar.Collapse className="justify-content-end me-2">
           <Nav>
-            <Nav.Link href="#">Contact</Nav.Link>
+            <Nav.Link href="#">Home</Nav.Link>
             <Nav.Link href="#">About</Nav.Link>
+            <Nav.Link href="#">Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
