@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar" // Un-commented this line
+import "bootstrap/dist/css/bootstrap.min.css"
 
 export default function CustomNavbar() {
   const [scrolled, setScrolled] = useState(false)
