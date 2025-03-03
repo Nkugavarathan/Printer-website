@@ -1,15 +1,16 @@
 import React from "react"
 import Navbar from "./components/Navbar"
-import { AnimatedBackground } from "animated-backgrounds"
-import Header from "./components/Header"
+import Hero from "./components/Hero"
+import Projects from "./components/Projects"
+import Footer from "./components/Footer"
+import "./style.css"
 export default function App() {
   return (
-    <div>
-      <AnimatedBackground animationName="quantumField" blendMode="screen" />
-      {/* Basic usage */}
-
+    <>
       <Navbar />
-      <Header />
-    </div>
+      <Hero />
+      <Projects />
+      <Footer />
+    </>
   )
 }
