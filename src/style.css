@@ -1,0 +1,59 @@
+/* Add this to your styles.css or equivalent CSS file */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+:root {
+    --primary-color: #2c3e50; /* Midnight Blue */
+    --secondary-color: #3498db; /* Electric Blue */
+    --accent-color: #1abc9c; /* Spring Green */
+    --background-color: #f8f9fa; /* Lavender Blush */
+  }
+  
+  body {
+    background-color: var(--background-color);
+  }
+  
+  .navbar {
+    background-color: var(--primary-color);
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar-brand,
+  .nav-link {
+    color: var(--secondary-color) !important;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-toggler-icon {
+    color: var(--secondary-color);
+  }
+  
+  .nav-link:hover {
+    color: var(--accent-color) !important;
+  }
+  
+  .navbar-toggler {
+    border: none;
+    color: var(--secondary-color);
+  }
+  
+  .navbar-toggler:hover {
+    color: var(--accent-color);
+  }
+  
+  .navbar-collapse {
+    justify-content: space-between;
+  }
+  
+  .navbar-collapse.collapse.show .nav-justified {
+    justify-content: center;
+  }
+  
+
+  @media(max-width:932px){
+    .nav-justified {
+       margin:0 auto;
+      }
+}
