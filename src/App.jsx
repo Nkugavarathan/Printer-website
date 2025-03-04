@@ -3,6 +3,7 @@ import NavbarContainer from "./components/NavbarContainer"
 // import Hero from "./components/Hero"
 import Projects from "./components/Projects"
 import Footer from "./components/Footer"
+import Contact from "./components/Contact"
 import "./style.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
       <NavbarContainer />
       {/* <Hero /> */}
       <Projects />
+      <Contact />
       <Footer />
     </>
   )
