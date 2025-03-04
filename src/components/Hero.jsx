@@ -202,20 +202,19 @@
 //     </div>
 //   )
 // }
-
-import React from "react"
+import React, { useCallback } from "react"
+import Particles from "react-tsparticles"
+import { loadFull } from "tsparticles" // ✅ Correct import
 import { Typewriter } from "react-simple-typewriter"
-import { Particles } from "react-tsparticles"
-import { loadFull } from "tsparticles"
-import "bootstrap/dist/css/bootstrap.min.css" // Import Bootstrap CSS
-import "../style.css" // Ensure your custom styles are imported
+import "bootstrap/dist/css/bootstrap.min.css"
+import "../style.css" // Import your custom styles
 
 export default function Hero() {
-  // Ensure particles.js is initialized correctly
-  const particlesInit = async (main) => {
+  // ✅ Fix Particles initialization
+  const particlesInit = useCallback(async (engine) => {
     console.log("Particles.js is initializing...")
-    await loadFull(main)
-  }
+    await loadFull(engine) // ✅ Ensure loadFull is used
+  }, [])
 
   return (
     <>
@@ -224,9 +223,7 @@ export default function Hero() {
         id="tsparticles"
         init={particlesInit}
         options={{
-          background: {
-            color: { value: "#f8f9fa" },
-          },
+          background: { color: { value: "#f8f9fa" } },
           fpsLimit: 60,
           interactivity: {
             events: {
