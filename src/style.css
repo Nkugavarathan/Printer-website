@@ -124,3 +124,9 @@ body {
     height: auto !important; /* Allow height to adjust based on content */
   }
 }
+
+
+.rowleft{
+  margin:auto auto;
+
+}
