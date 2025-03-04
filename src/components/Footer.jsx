@@ -10,7 +10,7 @@ export default function FooterComponent() {
         {/* Main Footer Content */}
         <Row className="justify-content-center text-center text-md-start">
           {/* Left Side: Quick Links */}
-          <Col md={4} className="mb-4 mb-md-0">
+          <Col md={5} className="mb-4 mb-md-0">
             <h5>Quick Links</h5>
             <ul className="list-unstyled">
               <li>
@@ -36,21 +36,16 @@ export default function FooterComponent() {
             </ul>
           </Col>
 
-          {/* Middle: Copyright Notice */}
-          <Col md={4} className="text-center mb-4 mb-md-0">
-            <p className="mb-0">&copy; 2025. All rights reserved.</p>
-          </Col>
-
           {/* Right Side: Follow Us */}
-          <Col md={4} className="text-center text-md-start">
+          <Col md={5} className="text-center text-md-start">
             <h5>Follow Us</h5>
             <p className="text-muted">
               Stay connected with us on social media for the latest updates.
             </p>
-            <div className="social-icons">
+            <div className="social-icons mt-0">
               <a
                 href="https://facebook.com"
-                className="text-white me-3"
+                className="text-white "
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -58,7 +53,7 @@ export default function FooterComponent() {
               </a>
               <a
                 href="https://twitter.com"
-                className="text-white me-3"
+                className="text-white "
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -81,6 +76,12 @@ export default function FooterComponent() {
                 <i className="fab fa-linkedin-in"></i>
               </a>
             </div>
+          </Col>
+        </Row>
+        {/* Middle: Copyright Notice */}
+        <Row>
+          <Col md={10} className="text-center mt-3 mb-md-0">
+            <p className="mb-0">&copy; 2025. All rights reserved.</p>
           </Col>
         </Row>
       </Container>
