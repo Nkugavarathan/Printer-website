@@ -11,9 +11,7 @@ body {
     --background-color: #f8f9fa; /* Lavender Blush */
   }
   
-  body {
-    background-color: var(--background-color);
-  }
+ 
   
   .navbar {
     background-color: var(--primary-color);
@@ -57,49 +55,25 @@ body {
        margin:0 auto;
       }
 }
-/* Ensure particles cover the entire viewport */
-#tsparticles {
-  position: fixed; /* Cover the entire screen */
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1; /* Keep it behind the text */
-}
 
-/* Hero section styles */
+
 .hero-container {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  z-index: 1;
   text-align: center;
-  z-index: 2; /* Keep text above the particles */
+  padding: 100px 20px;
 }
 
-.hero h1,
-.hero h2 {
-  color: #2c3e50; /* Adjust text color */
-}
-
-
-
-.project-card {
+#tsparticles {
+  position: fixed;
+  width: 100%;
   height: 100%;
-  text-align: center;
-  transition: transform 0.3s ease-in-out;
+  z-index: -1;
 }
 
-.project-card:hover {
-  transform: scale(1.05);
-}
-
-.project-image {
-  height: 300px;
-  width: 300px;
-  object-fit: cover;
-  margin: auto;
+.typewriter-text {
+  color: #3498db;
+  font-weight: bold;
 }
 
 
@@ -168,3 +142,4 @@ body {
   font-size: 0.9rem;
   color: #6c757d; /* Light gray color */
 }
+
