@@ -1,132 +1,105 @@
 import React, { useState } from "react"
+import { Card, Button, Modal } from "react-bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
-import "../style.css" // Ensure your custom styles are imported
+import "../style.css" // Ensure custom styles are included
 
 const projects = [
   {
     id: 1,
-    title: "Project One",
-    image: "/images/project1.jpg",
-    description: "This is a short description of project one.",
-    details:
-      "Full details about project one, its features, and technologies used.",
+    title: "Project 1",
+    image: "project1.jpg",
+    description: "Detailed description of Project 1.",
   },
   {
     id: 2,
-    title: "Project Two",
-    image: "/images/project2.jpg",
-    description: "This is a short description of project two.",
-    details:
-      "Full details about project two, its features, and technologies used.",
+    title: "Project 2",
+    image: "project2.jpg",
+    description: "Detailed description of Project 2.",
   },
   {
     id: 3,
-    title: "Project Three",
-    image: "/images/project3.jpg",
-    description: "This is a short description of project three.",
-    details:
-      "Full details about project three, its features, and technologies used.",
+    title: "Project 3",
+    image: "project3.jpg",
+    description: "Detailed description of Project 3.",
   },
   {
     id: 4,
-    title: "Project Four",
-    image: "/images/project4.jpg",
-    description: "This is a short description of project four.",
-    details:
-      "Full details about project four, its features, and technologies used.",
+    title: "Project 4",
+    image: "project4.jpg",
+    description: "Detailed description of Project 4.",
   },
   {
     id: 5,
-    title: "Project Five",
-    image: "/images/project5.jpg",
-    description: "This is a short description of project five.",
-    details:
-      "Full details about project five, its features, and technologies used.",
+    title: "Project 5",
+    image: "project5.jpg",
+    description: "Detailed description of Project 5.",
   },
   {
     id: 6,
-    title: "Project Six",
-    image: "/images/project6.jpg",
-    description: "This is a short description of project six.",
-    details:
-      "Full details about project six, its features, and technologies used.",
+    title: "Project 6",
+    image: "project6.jpg",
+    description: "Detailed description of Project 6.",
   },
   {
     id: 7,
-    title: "Project Seven",
-    image: "/images/project7.jpg",
-    description: "This is a short description of project seven.",
-    details:
-      "Full details about project seven, its features, and technologies used.",
+    title: "Project 7",
+    image: "project7.jpg",
+    description: "Detailed description of Project 7.",
   },
   {
     id: 8,
-    title: "Project Eight",
-    image: "/images/project8.jpg",
-    description: "This is a short description of project eight.",
-    details:
-      "Full details about project eight, its features, and technologies used.",
+    title: "Project 8",
+    image: "project8.jpg",
+    description: "Detailed description of Project 8.",
   },
 ]
 
-export default function Projects() {
+export default function ProjectSection() {
   const [selectedProject, setSelectedProject] = useState(null)
 
+  const handleClose = () => setSelectedProject(null)
+
   return (
-    <div className="container py-5">
+    <div className="container my-5">
       <h2 className="text-center mb-4">My Projects</h2>
       <div className="row g-4">
         {projects.map((project) => (
           <div className="col-md-3" key={project.id}>
-            <div
-              className="card project-card shadow-sm"
-              onClick={() => setSelectedProject(project)}
-            >
-              <img
+            <Card className="project-card">
+              <Card.Img
+                variant="top"
                 src={project.image}
-                className="card-img-top"
-                alt={project.title}
+                className="project-image"
               />
-              <div className="card-body text-center">
-                <h5 className="card-title">{project.title}</h5>
-                <p className="card-text">{project.description}</p>
-              </div>
-            </div>
+              <Card.Body className="text-center">
+                <Card.Title>{project.title}</Card.Title>
+                <Button
+                  variant="primary"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => setSelectedProject(project)}
+                >
+                  Read More
+                </Button>
+              </Card.Body>
+            </Card>
           </div>
         ))}
       </div>
 
-      {selectedProject && (
-        <div className="modal fade show d-block" tabIndex="-1">
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">{selectedProject.title}</h5>
-                <button
-                  className="btn-close"
-                  onClick={() => setSelectedProject(null)}
-                ></button>
-              </div>
-              <div className="modal-body">
-                <img
-                  src={selectedProject.image}
-                  className="img-fluid mb-3"
-                  alt={selectedProject.title}
-                />
-                <p>{selectedProject.details}</p>
-              </div>
-              <div className="modal-footer">
-                <button
-                  className="btn btn-secondary"
-                  onClick={() => setSelectedProject(null)}
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Modal */}
+      <Modal show={selectedProject !== null} onHide={handleClose} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>{selectedProject?.title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <img
+            src={selectedProject?.image}
+            alt={selectedProject?.title}
+            className="img-fluid mb-3"
+          />
+          <p>{selectedProject?.description}</p>
+        </Modal.Body>
+      </Modal>
     </div>
   )
 }

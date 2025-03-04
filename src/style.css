@@ -82,3 +82,21 @@ body {
 .hero h2 {
   color: #2c3e50; /* Adjust text color */
 }
+
+
+.project-card {
+  height: 100%;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-image {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  margin: auto;
+}
