@@ -56,13 +56,12 @@ const projects = [
 
 export default function ProjectSection() {
   const [selectedProject, setSelectedProject] = useState(null)
-
   const handleClose = () => setSelectedProject(null)
 
   return (
-    <div className="container my-5">
+    <div className="container my-5 ">
       <h2 className="text-center mb-4">My Projects</h2>
-      <div className="row g-4">
+      <div className="row g-4 ">
         {projects.map((project) => (
           <div className="col-md-3" key={project.id}>
             <Card className="project-card">
@@ -73,10 +72,13 @@ export default function ProjectSection() {
               />
               <Card.Body className="text-center">
                 <Card.Title>{project.title}</Card.Title>
+                {/* Debugging Button */}
                 <Button
-                  variant="primary"
-                  style={{ cursor: "pointer" }}
-                  onClick={() => setSelectedProject(project)}
+                  style={{ cursor: "pointer" }} // Debugging
+                  onClick={() => {
+                    console.log("Button clicked for:", project.title) // Debugging
+                    setSelectedProject(project)
+                  }}
                 >
                   Read More
                 </Button>
@@ -87,19 +89,26 @@ export default function ProjectSection() {
       </div>
 
       {/* Modal */}
-      <Modal show={selectedProject !== null} onHide={handleClose} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>{selectedProject?.title}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <img
-            src={selectedProject?.image}
-            alt={selectedProject?.title}
-            className="img-fluid mb-3"
-          />
-          <p>{selectedProject?.description}</p>
-        </Modal.Body>
-      </Modal>
+      {selectedProject && (
+        <Modal
+          show={true}
+          onHide={handleClose}
+          centered
+          className="custom-modal"
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>{selectedProject.title}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <img
+              src={selectedProject.image}
+              alt={selectedProject.title}
+              className="img-fluid mb-3"
+            />
+            <p>{selectedProject.description}</p>
+          </Modal.Body>
+        </Modal>
+      )}
     </div>
   )
 }

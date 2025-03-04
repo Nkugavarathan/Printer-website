@@ -84,6 +84,7 @@ body {
 }
 
 
+
 .project-card {
   height: 100%;
   text-align: center;
@@ -99,4 +100,27 @@ body {
   width: 300px;
   object-fit: cover;
   margin: auto;
+}
+
+
+/* Custom Modal Size */
+.custom-modal .modal-dialog {
+  max-width: 500px !important;
+  width: 500px !important;
+}
+
+.custom-modal .modal-content {
+  height: 500px !important;
+}
+
+/* Responsive Modal */
+@media (max-width: 576px) {
+  .custom-modal .modal-dialog {
+    max-width: 90% !important;
+    width: 90% !important;
+  }
+
+  .custom-modal .modal-content {
+    height: auto !important; /* Allow height to adjust based on content */
+  }
 }

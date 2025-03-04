@@ -209,80 +209,80 @@ import { Typewriter } from "react-simple-typewriter"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "../style.css" // Import your custom styles
 
-export default function Hero() {
-  // ✅ Fix Particles initialization
-  const particlesInit = useCallback(async (engine) => {
-    console.log("Particles.js is initializing...")
-    await loadFull(engine) // ✅ Ensure loadFull is used
-  }, [])
+// export default function Hero() {
+//   // ✅ Fix Particles initialization
+//   const particlesInit = useCallback(async (engine) => {
+//     console.log("Particles.js is initializing...")
+//     await loadFull(engine) // ✅ Ensure loadFull is used
+//   }, [])
 
-  return (
-    <>
-      {/* Particles Background */}
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={{
-          background: { color: { value: "#f8f9fa" } },
-          fpsLimit: 60,
-          interactivity: {
-            events: {
-              onClick: { enable: true, mode: "push" },
-              onHover: { enable: true, mode: "repulse" },
-              resize: true,
-            },
-            modes: {
-              push: { quantity: 4 },
-              repulse: { distance: 100, duration: 0.4 },
-            },
-          },
-          particles: {
-            color: { value: "#3498db" },
-            links: {
-              color: "#3498db",
-              distance: 150,
-              enable: true,
-              opacity: 0.5,
-              width: 1,
-            },
-            collisions: { enable: true },
-            move: {
-              direction: "none",
-              enable: true,
-              outModes: { default: "bounce" },
-              random: false,
-              speed: 3,
-              straight: false,
-            },
-            number: { value: 80, density: { enable: true, area: 800 } },
-            opacity: { value: 0.5 },
-            shape: { type: "circle" },
-            size: { random: true, value: 5 },
-          },
-          detectRetina: true,
-        }}
-      />
+//   return (
+//     <>
+//       {/* Particles Background */}
+//       <Particles
+//         id="tsparticles"
+//         init={particlesInit}
+//         options={{
+//           background: { color: { value: "#f8f9fa" } },
+//           fpsLimit: 60,
+//           interactivity: {
+//             events: {
+//               onClick: { enable: true, mode: "push" },
+//               onHover: { enable: true, mode: "repulse" },
+//               resize: true,
+//             },
+//             modes: {
+//               push: { quantity: 4 },
+//               repulse: { distance: 100, duration: 0.4 },
+//             },
+//           },
+//           particles: {
+//             color: { value: "#3498db" },
+//             links: {
+//               color: "#3498db",
+//               distance: 150,
+//               enable: true,
+//               opacity: 0.5,
+//               width: 1,
+//             },
+//             collisions: { enable: true },
+//             move: {
+//               direction: "none",
+//               enable: true,
+//               outModes: { default: "bounce" },
+//               random: false,
+//               speed: 3,
+//               straight: false,
+//             },
+//             number: { value: 80, density: { enable: true, area: 800 } },
+//             opacity: { value: 0.5 },
+//             shape: { type: "circle" },
+//             size: { random: true, value: 5 },
+//           },
+//           detectRetina: true,
+//         }}
+//       />
 
-      {/* Hero Section */}
-      <div className="hero-container">
-        <section id="hero" className="hero text-center">
-          <h1>Welcome to My Portfolio</h1>
-          <h2>
-            I'm a{" "}
-            <span>
-              <Typewriter
-                words={[
-                  "Video Editor",
-                  "Creative Designer",
-                  "Motion Graphics Artist",
-                ]}
-                loop
-                cursor
-              />
-            </span>
-          </h2>
-        </section>
-      </div>
-    </>
-  )
-}
+//       {/* Hero Section */}
+//       <div className="hero-container">
+//         <section id="hero" className="hero text-center">
+//           <h1>Welcome to My Portfolio</h1>
+//           <h2>
+//             I'm a{" "}
+//             <span>
+//               <Typewriter
+//                 words={[
+//                   "Video Editor",
+//                   "Creative Designer",
+//                   "Motion Graphics Artist",
+//                 ]}
+//                 loop
+//                 cursor
+//               />
+//             </span>
+//           </h2>
+//         </section>
+//       </div>
+//     </>
+//   )
+// }
