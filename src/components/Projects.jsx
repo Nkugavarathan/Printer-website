@@ -63,7 +63,7 @@ export default function ProjectSection() {
       <h2 className="text-center mb-4">My Projects</h2>
       <div className="row g-4 ">
         {projects.map((project) => (
-          <div className="col-md-3" key={project.id}>
+          <div className="col-lg-3 col-md-6 col-sm-12" key={project.id}>
             <Card className="project-card">
               <Card.Img
                 variant="top"
